@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Image Upload & Display</title>
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <h2>Select an image to upload and display</h2>
+        <p>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        </p>
+        {% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}" height="400px" width="600px">
+        </div>
+        {% endif %}
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <input type="file" name="file" autocomplete="off" required>
+                </p>
+            </dl>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+    </div>
+
+</body>
+
+</html>
