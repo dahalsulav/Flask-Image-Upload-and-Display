@@ -1,1 +1,1 @@
-Note: Install flask in virtual environment
+Note: Install flask & python in virtual environment
