@@ -1,1 +1,1 @@
-# Flask-Image-Upload-and-Display
+Note: Install flask in virtual environment
